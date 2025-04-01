@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(0, 85%, 70%, 0.5);
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 85%, 70%);
+}
+
+/* Konami Code Easter Egg Effect */
+.konami-activated {
+  animation: rainbow-flash 3s ease;
+}
+
+@keyframes rainbow-flash {
+  0% { background-color: transparent; }
+  10% { background-color: rgba(255, 0, 0, 0.1); }
+  20% { background-color: rgba(255, 165, 0, 0.1); }
+  30% { background-color: rgba(255, 255, 0, 0.1); }
+  40% { background-color: rgba(0, 128, 0, 0.1); }
+  50% { background-color: rgba(0, 0, 255, 0.1); }
+  60% { background-color: rgba(75, 0, 130, 0.1); }
+  70% { background-color: rgba(238, 130, 238, 0.1); }
+  80% { background-color: rgba(255, 0, 0, 0.1); }
+  90% { background-color: rgba(255, 255, 255, 0.1); }
+  100% { background-color: transparent; }
+}
